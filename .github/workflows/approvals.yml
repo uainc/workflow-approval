@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Run a one-line script
       run: |
-        echo This job didn't need an approval
+        echo "This job didn't need an approval"
   
   manual-approval-job:
     runs-on: ubuntu-latest
@@ -20,4 +20,4 @@ jobs:
     steps:
     - name: Run a one-line script
       run: |
-        echo This job could not run until is was approved by Andre
+        echo "This job could not run until is was approved by Andre"
