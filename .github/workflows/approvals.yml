@@ -9,11 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
-        run: echo This job didn't need an approval
+        run: |
+          echo This job didn't need an approval
   
   manual-approval-job:
     runs-on: ubuntu-latest
+    needs: [job-without-approval]
     environment: approvals
     steps:
       - name: Run a one-line script
-        run: echo This job could not run until is was approved by Andre
+        run: |
+          echo This job could not run until is was approved by Andre
