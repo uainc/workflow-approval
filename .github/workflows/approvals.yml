@@ -1,0 +1,19 @@
+name: Testing approvals
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+jobs:
+  job-without-approval:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo This job didn't need an approval
+  
+  manual-approval-job:
+    runs-on: ubuntu-latest
+    environment: approvals
+    steps:
+      - name: Run a one-line script
+        run: echo This job could not run until is was approved by Andre
